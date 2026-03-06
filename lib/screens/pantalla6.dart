@@ -37,13 +37,23 @@ class EditarPerfilScreen extends StatelessWidget {
           const Spacer(),
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: ElevatedButton(
               onPressed: () => Navigator.pop(context), 
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red, padding: const EdgeInsets.symmetric(vertical: 15)), 
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[800], padding: const EdgeInsets.symmetric(vertical: 15)), 
               child: const Text("GUARDAR", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16))
             ),
-          )
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red, padding: const EdgeInsets.symmetric(vertical: 15)), 
+              child: const Text("ELIMINAR PERFIL", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16))
+            ),
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );

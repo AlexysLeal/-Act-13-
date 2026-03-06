@@ -9,11 +9,28 @@ class InicioScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.black26,
+        backgroundColor: Colors.black.withOpacity(0.5),
         elevation: 0,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 10),
-          child: Text('N', style: TextStyle(color: Colors.red, fontSize: 38, fontWeight: FontWeight.bold)),
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            const Text('N', style: TextStyle(color: Colors.red, fontSize: 38, fontWeight: FontWeight.bold)),
+            const SizedBox(width: 30),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Series", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(width: 20),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Películas", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(width: 20),
+            TextButton(
+              onPressed: () {},
+              child: const Text("Categorías", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+            ),
+          ],
         ),
         actions: [
           IconButton(
@@ -29,7 +46,7 @@ class InicioScreen extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           _buildHero(),
-          _buildSection("Continuar viendo como Adulto", [
+          _buildSection("Tendencias", [
             'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400',
             'https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=400',
             'https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=400',
@@ -54,7 +71,13 @@ class InicioScreen extends StatelessWidget {
           ),
         ),
         Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
+            Image.network(
+              'https://raw.githubusercontent.com/AlexysLeal/-Act-13-/main/squid%20game.jfif',
+              height: 180,
+            ),
+            const SizedBox(height: 20),
             const Text("SQUID GAME", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold, letterSpacing: 2)),
             const SizedBox(height: 10),
             Row(

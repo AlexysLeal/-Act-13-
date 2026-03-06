@@ -13,17 +13,44 @@ class CategoriasScreen extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(title: const Text("Categorías"), backgroundColor: Colors.black),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(15),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.5, mainAxisSpacing: 12, crossAxisSpacing: 12),
-        itemCount: cats.length,
-        itemBuilder: (context, i) => Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [cats[i]['c'], cats[i]['c'].withOpacity(0.5)]),
-            borderRadius: BorderRadius.circular(10)
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.all(15),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.5, mainAxisSpacing: 12, crossAxisSpacing: 12),
+              itemCount: cats.length,
+              itemBuilder: (context, i) => Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [cats[i]['c'], cats[i]['c'].withOpacity(0.5)]),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Center(child: Text(cats[i]['n'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
+              ),
+            ),
           ),
-          child: Center(child: Text(cats[i]['n'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17))),
-        ),
+          const Padding(
+            padding: EdgeInsets.only(left: 15.0, top: 10.0, bottom: 10.0),
+            child: Text("Colecciones especiales", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red, padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
+                child: const Text("Tendencias", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red, padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10)),
+                child: const Text("Premios", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+              ),
+            ],
+          ),
+          const SizedBox(height: 20)
+        ],
       ),
     );
   }
